@@ -17,29 +17,63 @@ public class CalculadoraController {
     private Label label;
 
     @FXML
-    private TextField textfield;
+    private TextField num1;
+
+    @FXML
+    private TextField num2;
+    
+    @FXML
+    private TextField resultado;
+    
+    public void initialize() {
+        // TODO
+    }
 
     @FXML
     private void sumarButtonAction(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("Calculadora.fxml"));
-		int num1 = root.getChildrenUnmodifiable().get(0);
-		int num2 = root.getChildrenUnmodifiable().get(1);
 
-		label.setText(textfield.getText());
+    	double num1Calc = Double.parseDouble(num1.getText());
+    	double num2Calc = Double.parseDouble(num2.getText());
+    	
+    	double result = num1Calc + num2Calc;
+    	
+    	resultado.setText(result + "");
+
     }
     
     @FXML
     private void restarButtonAction(ActionEvent event) {
+    	
+    	double num1Calc = Double.parseDouble(num1.getText());
+    	double num2Calc = Double.parseDouble(num2.getText());
+    	
+    	double result = num1Calc - num2Calc;
+    	
+    	resultado.setText(result + "");
     	
     }
     
     @FXML
     private void multiplicarButtonAction(ActionEvent event) {
     	
+    	double num1Calc = Double.parseDouble(num1.getText());
+    	double num2Calc = Double.parseDouble(num2.getText());
+    	
+    	double result = num1Calc * num2Calc;
+    	
+    	resultado.setText(result + "");
+    	
     }
     
     @FXML
     private void dividirButtonAction(ActionEvent event) {
+    	
+    	double num1Calc = Double.parseDouble(num1.getText());
+    	double num2Calc = Double.parseDouble(num2.getText());
+    	
+    	double result = num1Calc / num2Calc;
+    	
+    	resultado.setText(result + "");
     	
     }
 }
