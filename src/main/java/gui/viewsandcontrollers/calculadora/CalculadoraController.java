@@ -32,48 +32,61 @@ public class CalculadoraController {
     @FXML
     private void sumarButtonAction(ActionEvent event) throws IOException {
 
-    	double num1Calc = Double.parseDouble(num1.getText());
-    	double num2Calc = Double.parseDouble(num2.getText());
-    	
-    	double result = num1Calc + num2Calc;
-    	
-    	resultado.setText(result + "");
+    	try {
+    		double num1Calc = Double.parseDouble(num1.getText());
+    		double num2Calc = Double.parseDouble(num2.getText());
+    		double result = num1Calc + num2Calc;
+    		resultado.setText(result + "");
+    	} catch (NumberFormatException e) {
+    		resultado.setText("Recuerda que debes utilizar números, no letras.");
+    	}
 
     }
     
     @FXML
     private void restarButtonAction(ActionEvent event) {
     	
-    	double num1Calc = Double.parseDouble(num1.getText());
-    	double num2Calc = Double.parseDouble(num2.getText());
-    	
-    	double result = num1Calc - num2Calc;
-    	
-    	resultado.setText(result + "");
+    	try {
+    		double num1Calc = Double.parseDouble(num1.getText());
+    		double num2Calc = Double.parseDouble(num2.getText());
+    		double result = num1Calc - num2Calc;
+    		resultado.setText(result + "");
+    	} catch (NumberFormatException e) {
+    		resultado.setText("Recuerda que debes utilizar números, no letras.");
+    	}
     	
     }
     
     @FXML
     private void multiplicarButtonAction(ActionEvent event) {
-    	
-    	double num1Calc = Double.parseDouble(num1.getText());
-    	double num2Calc = Double.parseDouble(num2.getText());
-    	
-    	double result = num1Calc * num2Calc;
-    	
-    	resultado.setText(result + "");
+
+    	try {
+    		double num1Calc = Double.parseDouble(num1.getText());
+    		double num2Calc = Double.parseDouble(num2.getText());
+    		double result = num1Calc * num2Calc;
+    		resultado.setText(result + "");
+    	} catch (NumberFormatException e) {
+    		resultado.setText("Recuerda que debes utilizar números, no letras.");
+    	}
     	
     }
     
     @FXML
     private void dividirButtonAction(ActionEvent event) {
-    	
-    	double num1Calc = Double.parseDouble(num1.getText());
-    	double num2Calc = Double.parseDouble(num2.getText());
-    	
-    	double result = num1Calc / num2Calc;
-    	
-    	resultado.setText(result + "");
+    	    	
+    	try {
+        	double num1Calc = Double.parseDouble(num1.getText());
+        	double num2Calc = Double.parseDouble(num2.getText());
+    		double result = num1Calc / num2Calc;
+    		if (num2Calc == 0) {
+    			resultado.setText("No se puede dividir entre 0.");
+    		} else {
+    			resultado.setText(result + "");
+    		}
+
+    	} catch (NumberFormatException e) {
+    		resultado.setText("Recuerda que debes utilizar números, no letras.");
+    	}
     	
     }
 }
